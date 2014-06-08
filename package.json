@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "snooze": "^0.4.2",
+    "snooze-stdlib": "^0.1.7"
+  }
+}
