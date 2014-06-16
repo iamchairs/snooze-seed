@@ -1,23 +1,27 @@
 var snooze = require('snooze');
 
 snooze.module('HelloServer')
+		// Go to localhost:8000/hello/basic
 		.route('get', '/hello/basic', {
 			controller: 'HelloCtrl',
 			action: 'sayHello'
 		})
+		// Go to localhost:8000/hello/dto
 		.route('get', '/hello/dto', {
 			controller: 'HelloCtrl',
 			action: 'sayHelloDTO'
 		})
+		// Go to localhost:8000/hello/dto2
 		.route('get', '/hello/dto2', {
 			controller: 'HelloCtrl',
 			action: 'sayHelloDTOParsed',
 			// Optional
 			// See more on routes and dtos in the documentation
 			response: {
-				200: '@HelloDTO'
+				200: 'HelloDTO'
 			}
 		})
+		// Go to localhost:8000/hello/response?recipient=World
 		.route('get', '/hello/respond', {
 			controller: 'HelloCtrl',
 			action: 'sayHelloFromQuery',
@@ -31,6 +35,7 @@ snooze.module('HelloServer')
 				}
 			}
 		})
+		// Go to localhost:8000/hello/name/:World
 		.route('get', '/hello/name/:recipient', {
 			controller: 'HelloCtrl',
 			action: 'sayHelloFromParam',
@@ -44,6 +49,7 @@ snooze.module('HelloServer')
 				}
 			}
 		})
+		// You'l need to test this with PostMan
 		.route('post', '/hello/body', {
 			controller: 'HelloCtrl',
 			action: 'sayHelloFromBody',
@@ -57,6 +63,7 @@ snooze.module('HelloServer')
 				}
 			}
 		})
+		// Go to localhost:8000/hello/excited
 		.route('get', '/hello/excited', {
 			controller: 'HelloCtrl',
 			action: 'sayHelloFromService'

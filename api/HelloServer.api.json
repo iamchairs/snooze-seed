@@ -1,0 +1,101 @@
+{
+  "module": "HelloServer",
+  "modules": [],
+  "routes": [
+    {
+      "method": "get",
+      "path": "/hello/basic",
+      "response": null,
+      "request": null
+    },
+    {
+      "method": "get",
+      "path": "/hello/dto",
+      "response": null,
+      "request": null
+    },
+    {
+      "method": "get",
+      "path": "/hello/dto2",
+      "response": {
+        "200": {}
+      },
+      "request": null
+    },
+    {
+      "method": "get",
+      "path": "/hello/respond",
+      "response": null,
+      "request": {
+        "query": {
+          "recipient": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "method": "get",
+      "path": "/hello/name/:recipient",
+      "response": null,
+      "request": {
+        "params": {
+          "recipient": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "method": "post",
+      "path": "/hello/body",
+      "response": null,
+      "request": {
+        "body": {
+          "recipient": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "method": "get",
+      "path": "/hello/excited",
+      "response": null,
+      "request": null
+    },
+    {
+      "method": "resource",
+      "path": "/assets/hello/*",
+      "response": null,
+      "request": null
+    }
+  ],
+  "services": [],
+  "controllers": [],
+  "validators": [],
+  "dtos": [
+    {
+      "name": "HelloDTO",
+      "properties": [
+        {
+          "name": "greeting",
+          "type": "string",
+          "description": "What to greet the recipient with.",
+          "example": "Salutations",
+          "default": null,
+          "required": true
+        },
+        {
+          "name": "recipient",
+          "type": "string",
+          "description": "Who to greet",
+          "example": "John",
+          "default": null,
+          "required": false
+        }
+      ],
+      "strict": false
+    }
+  ]
+}
