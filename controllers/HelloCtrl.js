@@ -28,12 +28,17 @@ snooze.module('HelloServer').controller('HelloCtrl', function(HelloDTO, Hello) {
 		res.send(200, 'Hello ' + options.params.recipient + '!');
 	};
 
+	var _sayHelloFromBody = function(res, options) {
+		res.send(200, 'Hello ' + options.body.recipient + '!');
+	};
+
 	return {
 		sayHello: _sayHello,
 		sayHelloDTO: _sayHelloDTO,
 		sayHelloDTOParsed: _sayHelloDTOParsed,
 		sayHelloFromQuery: _sayHelloFromQuery,
 		sayHelloFromService: _sayHelloFromService,
-		sayHelloFromParam: _sayHelloFromParam
+		sayHelloFromParam: _sayHelloFromParam,
+		sayHelloFromBody: _sayHelloFromBody
 	};
 });

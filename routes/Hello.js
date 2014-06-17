@@ -4,12 +4,18 @@ snooze.module('HelloServer')
 		// Go to localhost:8000/hello/basic
 		.route('get', '/hello/basic', {
 			controller: 'HelloCtrl',
-			action: 'sayHello'
+			action: 'sayHello',
+			response: {
+				200: 'MessageDTO'
+			}
 		})
 		// Go to localhost:8000/hello/dto
 		.route('get', '/hello/dto', {
 			controller: 'HelloCtrl',
-			action: 'sayHelloDTO'
+			action: 'sayHelloDTO',
+			response: {
+				200: 'HelloDTO'
+			}
 		})
 		// Go to localhost:8000/hello/dto2
 		.route('get', '/hello/dto2', {
@@ -33,6 +39,9 @@ snooze.module('HelloServer')
 						type: 'string'
 					}
 				}
+			},
+			response: {
+				200: 'MessageDTO'
 			}
 		})
 		// Go to localhost:8000/hello/name/:World
@@ -47,6 +56,9 @@ snooze.module('HelloServer')
 						type: 'string'
 					}
 				}
+			},
+			response: {
+				200: 'MessageDTO'
 			}
 		})
 		// You'l need to test this with PostMan
@@ -61,12 +73,18 @@ snooze.module('HelloServer')
 						type: 'string'
 					}
 				}
+			},
+			response: {
+				200: 'MessageDTO'
 			}
 		})
 		// Go to localhost:8000/hello/excited
 		.route('get', '/hello/excited', {
 			controller: 'HelloCtrl',
-			action: 'sayHelloFromService'
+			action: 'sayHelloFromService',
+			response: {
+				200: 'MessageDTO'
+			}
 		})
 		// Go to localhost:8000/assets/hello/snooze.png
 		.route('resource', '/assets/hello/*', {});
